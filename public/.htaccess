@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Send everything to index.php
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ cgi-bin/router.cgi/$1 [L]

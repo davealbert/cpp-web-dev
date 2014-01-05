@@ -1,7 +1,19 @@
 CC=g++
 CGI=/Applications/MAMP/cgi-bin/
 
-all: get hello
+default: router
+
+all: router home
+
+router: router.cpp home
+	$(CC) -o router.cgi home.o router.cpp -lcgicc
+	cp router.cgi $(CGI)
+
+home: home.cpp 
+	$(CC) -c home.cpp
+	
+
+# This is historic for reference
 
 get: get.cpp
 	$(CC) -o get.cgi get.cpp -lcgicc
