@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title></title>
+      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+   </head>
+   <body>
+      <a href="#" id="say_hello">hello</a>
+
+
+      <script type="text/javascript">
+         $('#say_hello').click(function(){
+               $.ajax('cgi-bin/hello.cgi').done(function(data){
+                     $('body').append(data);
+               });
+         });
+      </script>
+   </body>
+</html>
