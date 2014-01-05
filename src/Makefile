@@ -12,6 +12,8 @@ router: router.cpp home
 home: home.cpp 
 	$(CC) -c home.cpp
 	
+clean:
+	rm *.o *.cgi
 
 # This is historic for reference
 
