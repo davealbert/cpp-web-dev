@@ -46,10 +46,17 @@ int main ()
       path = "";
    }
 
-   cout << "Route: " << route << " <br>\nPath: " << path;
-   Home controller;
-   controller.index();
+   if (route == "") {
+      // Home Controller
+      cout << "Route: " << route << " <br>\nPath: " << path;
+      Home controller;
+      controller.index();
 
+      // try this
+      controller.maybe();
+   } else {
+   cout << "<br><h1>Missing Controller</h1>\n";
+   }
 
    cout << "<br>\n</body>\n";
    cout << "</html>\n";
