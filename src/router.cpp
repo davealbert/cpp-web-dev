@@ -10,6 +10,7 @@
 #include "controller.h"
 #include "home.h"
 #include "path.h"
+#include "errors.h"
 
 using namespace std;
 using namespace cgicc;
@@ -61,7 +62,8 @@ void launchController(string route, string thePath)
    } else if (route == "path") {
       theController = new Path(thePath);
    } else {
-      theController = new Controller(thePath);
+      theController = new Errors(route);
+      theController->show404(route);
    }
 
    theController->index();

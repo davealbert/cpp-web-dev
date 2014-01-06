@@ -5,7 +5,7 @@
 #include <stdlib.h> 
 
 #include "controller.h"
-
+#include "home.h"
 
 Controller::Controller(std::string path)
 {
@@ -18,8 +18,8 @@ Controller::~Controller()
 
 void Controller::index()
 {
-    this->page_content = "404";
-    this->render_view();
+    Home home(this->path);
+    home.index();
 }
 
 void Controller::render_view() 

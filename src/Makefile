@@ -1,6 +1,6 @@
 CC=g++
 CGI=/Applications/MAMP/cgi-bin/
-OBJS=controller.o home.o path.o
+OBJS=controller.o home.o path.o errors.o
 
 default: router
 
@@ -9,6 +9,9 @@ all: router
 router: router.cpp $(OBJS)
 	$(CC) -o router.cgi $(OBJS) router.cpp -lcgicc
 	cp router.cgi $(CGI)
+
+errors.o: errors.cpp
+	$(CC) -c errors.cpp
 
 path.o: path.cpp
 	$(CC) -c path.cpp
