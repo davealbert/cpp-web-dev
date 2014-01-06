@@ -16,3 +16,4 @@ void Home::index()
    this->page_content = "This is the Home controller.";
    this->render_view();
 }
+

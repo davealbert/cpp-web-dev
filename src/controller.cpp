@@ -46,3 +46,4 @@ void Controller::append_page_content(std::string append)
 {
    this->page_content.append(append);
 }
+

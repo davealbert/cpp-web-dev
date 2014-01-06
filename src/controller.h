@@ -6,8 +6,6 @@
 class Controller {
    protected: 
       std::string page_content;
-
-   private:
       std::string path;
       std::string title;
 
