@@ -37,6 +37,8 @@ void Controller::render_view()
    std::cout << "</html>\n";
 }
 
+void Controller::show404(std::string route) { }
+
 void Controller::set_title(std::string new_title)
 {
    this->title = new_title;
