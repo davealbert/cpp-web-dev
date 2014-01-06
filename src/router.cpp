@@ -16,10 +16,6 @@ using namespace cgicc;
 int main ()
 {
    Cgicc cgi;
-   CgiEnvironment env = cgi.getEnvironment();
-
-//   cout << "OK<br>\n" << env.getPathInfo() << "<br><br>\n\n";
-
 
    string path = env.getPathInfo();
    std::string delimiter = "/";
@@ -40,17 +36,15 @@ int main ()
       path = "";
    }
 
+   Controller* theController;
    if (route == "") {
       // Home Controller
-      Home controller(path);
-      controller.index();
+      theController = new Home(path);
    } else {
-      Controller control(path);
-      control.index();
+      theController = new Controller(path);
    }
-
+      theController->index();
 
    return 0;
 }
-
 

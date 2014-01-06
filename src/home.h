@@ -5,10 +5,10 @@
 
 #include "Controller.h"
 
-class Home : Controller {
+class Home : public  Controller {
    public:
       Home(std::string path);
-      void index();
+      virtual void index();
 };
 
 #endif

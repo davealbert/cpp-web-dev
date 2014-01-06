@@ -16,7 +16,7 @@ class Controller {
       ~Controller();
 
       void set_title(std::string new_title);
-      void index();
+      virtual void index();
       void render_view();
       void append_page_content(std::string append);
 };
