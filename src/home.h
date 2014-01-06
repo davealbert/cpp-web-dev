@@ -1,10 +1,13 @@
 #ifndef HOME_CLASS_HEADER
 #define HOME_CLASS_HEADER
 
+#include <string>
+
 #include "Controller.h"
 
-class Home : public Controller {
+class Home : Controller {
    public:
+      Home(std::string path);
       void index();
 };
 

@@ -7,6 +7,7 @@
 #include <cgicc/CgiDefs.h> 
 #include <cgicc/Cgicc.h> 
 
+#include "controller.h"
 #include "home.h"
 
 using namespace std;
@@ -17,14 +18,7 @@ int main ()
    Cgicc cgi;
    CgiEnvironment env = cgi.getEnvironment();
 
-   cout << "Content-type:text/html\r\n\r\n";
-   cout << "<html>\n";
-   cout << "<head>\n";
-   cout << "<title>Router</title>\n";
-   cout << "</head>\n";
-   cout << "<body>\n";
-
-   cout << "OK<br>\n" << env.getPathInfo() << "<br><br>\n\n";
+//   cout << "OK<br>\n" << env.getPathInfo() << "<br><br>\n\n";
 
 
    string path = env.getPathInfo();
@@ -48,18 +42,14 @@ int main ()
 
    if (route == "") {
       // Home Controller
-      cout << "Route: " << route << " <br>\nPath: " << path;
-      Home controller;
+      Home controller(path);
       controller.index();
-
-      // try this
-      controller.maybe();
    } else {
-   cout << "<br><h1>Missing Controller</h1>\n";
+      Controller control(path);
+      control.index();
    }
 
-   cout << "<br>\n</body>\n";
-   cout << "</html>\n";
+
    return 0;
 }
 

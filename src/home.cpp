@@ -6,8 +6,13 @@
 
 #include "home.h"
 
+Home::Home(std::string path)
+: Controller(path)
+{
+}
 
 void Home::index()
 {
-   std::cout << "<br><br>This is the Home controller.<br><br>\n";
+   this->page_content = "This is the Home controller.";
+   this->render_view();
 }
