@@ -9,6 +9,7 @@
 Home::Home(std::string path)
 : Controller(path)
 {
+   this->title = "C++ mvc web framwork";
 }
 
 void Home::index()

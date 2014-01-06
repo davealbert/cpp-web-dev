@@ -9,6 +9,7 @@
 Path::Path(std::string path)
 : Controller(path)
 {
+    this->title = path;
 }
 
 void Path::index()

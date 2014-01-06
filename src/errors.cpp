@@ -9,6 +9,7 @@
 Errors::Errors(std::string path)
 : Controller(path)
 {
+   this->title = "Error";
 }
 
 void Errors::index()

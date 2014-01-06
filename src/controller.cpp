@@ -27,7 +27,7 @@ void Controller::render_view()
    std::cout << "Content-type:text/html\r\n\r\n";
    std::cout << "<html>\n";
    std::cout << "<head>\n";
-   std::cout << "<title>Router</title>\n";
+   std::cout << "<title>" + this->title + "</title>\n";
    std::cout << "</head>\n";
    std::cout << "<body>\n";
 
